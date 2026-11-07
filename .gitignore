@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+/build/
+/dist/
+/.venv/
+/venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Saved --save-json payloads from live runs; the committed fixtures stay.
+/*.local.json
+!tests/fixtures/**
+!examples/**

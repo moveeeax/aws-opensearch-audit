@@ -1,0 +1,57 @@
+{
+  "region": "eu-central-1",
+  "domains": [
+    {
+      "DomainName": "search-ancient",
+      "ARN": "arn:aws:es:eu-central-1:123456789012:domain/search-ancient",
+      "EngineVersion": "Elasticsearch_5.1",
+      "Endpoint": "search-ancient-mnopqr.eu-central-1.es.amazonaws.com",
+      "ClusterConfig": {
+        "InstanceType": "m4.large.elasticsearch",
+        "InstanceCount": 2,
+        "DedicatedMasterEnabled": true,
+        "DedicatedMasterCount": 3,
+        "ZoneAwarenessEnabled": true,
+        "ZoneAwarenessConfig": {
+          "AvailabilityZoneCount": 2
+        }
+      },
+      "VPCOptions": {
+        "VPCId": "vpc-0a1b2c3d",
+        "SubnetIds": [
+          "subnet-aaa",
+          "subnet-bbb",
+          "subnet-ccc"
+        ],
+        "AvailabilityZones": [
+          "eu-central-1a",
+          "eu-central-1b",
+          "eu-central-1c"
+        ],
+        "SecurityGroupIds": [
+          "sg-0f1e2d3c"
+        ]
+      },
+      "EncryptionAtRestOptions": {
+        "Enabled": true,
+        "KmsKeyId": "alias/aws/es"
+      },
+      "NodeToNodeEncryptionOptions": {
+        "Enabled": true
+      },
+      "DomainEndpointOptions": {
+        "EnforceHTTPS": true,
+        "TLSSecurityPolicy": "Policy-Min-TLS-1-2-2019-07"
+      },
+      "AdvancedSecurityOptions": {
+        "Enabled": true,
+        "InternalUserDatabaseEnabled": false
+      },
+      "ServiceSoftwareOptions": {
+        "CurrentVersion": "R20201117",
+        "UpdateAvailable": false
+      },
+      "AccessPolicies": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Sid\": \"AllowCheckoutRole\", \"Effect\": \"Allow\", \"Principal\": {\"AWS\": \"arn:aws:iam::123456789012:role/checkout-api\"}, \"Action\": \"es:ESHttp*\", \"Resource\": \"arn:aws:es:eu-central-1:123456789012:domain/search-prod/*\"}]}"
+    }
+  ]
+}

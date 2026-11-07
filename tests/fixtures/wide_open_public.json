@@ -1,0 +1,46 @@
+{
+  "region": "eu-central-1",
+  "domains": [
+    {
+      "DomainName": "search-legacy",
+      "ARN": "arn:aws:es:eu-central-1:123456789012:domain/search-legacy",
+      "Created": true,
+      "Processing": false,
+      "EngineVersion": "Elasticsearch_7.10",
+      "Endpoint": "search-legacy-ghijkl.eu-central-1.es.amazonaws.com",
+      "ClusterConfig": {
+        "InstanceType": "m5.large.elasticsearch",
+        "InstanceCount": 2,
+        "DedicatedMasterEnabled": false,
+        "ZoneAwarenessEnabled": false,
+        "WarmEnabled": false
+      },
+      "EncryptionAtRestOptions": {
+        "Enabled": false
+      },
+      "NodeToNodeEncryptionOptions": {
+        "Enabled": false
+      },
+      "DomainEndpointOptions": {
+        "EnforceHTTPS": false,
+        "TLSSecurityPolicy": "Policy-Min-TLS-1-0-2019-07"
+      },
+      "AdvancedSecurityOptions": {
+        "Enabled": false,
+        "InternalUserDatabaseEnabled": true
+      },
+      "ServiceSoftwareOptions": {
+        "CurrentVersion": "R20230628",
+        "NewVersion": "R20250115",
+        "UpdateAvailable": true,
+        "Cancellable": true,
+        "UpdateStatus": "ELIGIBLE",
+        "AutomatedUpdateDate": "2026-12-01T00:00:00Z"
+      },
+      "SnapshotOptions": {
+        "AutomatedSnapshotStartHour": 3
+      },
+      "AccessPolicies": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Sid\": \"OpenToTheWorld\", \"Effect\": \"Allow\", \"Principal\": {\"AWS\": \"*\"}, \"Action\": \"es:*\", \"Resource\": \"arn:aws:es:eu-central-1:123456789012:domain/search-legacy/*\"}]}"
+    }
+  ]
+}
